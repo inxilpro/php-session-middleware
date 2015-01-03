@@ -15,15 +15,14 @@ $ npm install php-session-middleware --save
 
 ``` js
 var PhpSessionMiddleware = require('php-session-middleware');
-var middleware = new PhpSessionMiddleware({
+app.use(new PhpSessionMiddleware({
 	handler: 'file',
 	opts: {
-		path: '/tmp/sessions/'
+		path: '/tmp/'
 	}
-});
-app.use(middleware);
+}));
 app.get('/restricted', function(req, res) {
-	if (res.session && res.session.user_id) {
+	if (req.session && req.session.user_id) {
 		// Do something with session
 	}
 });
