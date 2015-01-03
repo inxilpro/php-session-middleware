@@ -5,9 +5,8 @@ var path = require('path');
 var assert = require('assert');
 var supertest = require('supertest');
 var app = require('express')();
-var cookieParser = require('cookie-parser');
-var Middleware = require('../index.js')
-var middleware = new Middleware({
+var cookieParser = require('cookie-parser')();
+var middleware = require('../index.js')({
 	handler: 'file',
 	opts: {
 		path: path.resolve(__dirname, 'fixtures')
@@ -18,7 +17,7 @@ var expected = fs.readFileSync(__dirname + '/fixtures/' + sid + '.json', { encod
 var url;
 
 // Set up basic express server
-app.use(cookieParser());
+app.use(cookieParser);
 app.get('/', middleware, function(req, res) {
 	if (req.sessionError) {
 		return res.end(JSON.stringify(req.sessionError.message));

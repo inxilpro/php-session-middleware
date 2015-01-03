@@ -28,6 +28,11 @@ app.get('/restricted', function(req, res) {
 });
 ```
 
+## Roadmap
+  - Optionally parse `php.ini` for configuration
+  - Allow for other session handlers, such as memcached
+  - Implement many more tests
+
 ## Change Log
 
 ### Initial release
