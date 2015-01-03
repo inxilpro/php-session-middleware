@@ -1,6 +1,6 @@
 {
   "name": "php-session-middleware",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Express/Connect Middleware to load PHP session data",
   "main": "index.js",
   "scripts": {
