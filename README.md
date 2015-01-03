@@ -14,16 +14,17 @@ $ npm install php-session-middleware --save
 ## Usage
 
 ``` js
-var PhpSessionMiddleware = require('php-session-middleware');
-app.use(new PhpSessionMiddleware({
+app.use(require('php-session-middleware')({
 	handler: 'file',
 	opts: {
 		path: '/tmp/'
 	}
 }));
 app.get('/restricted', function(req, res) {
-	if (req.session && req.session.user_id) {
-		// Do something with session
+	if (req.session) {
+		res.render('hello', { 
+			name: req.session.name
+		});
 	}
 });
 ```
@@ -31,7 +32,7 @@ app.get('/restricted', function(req, res) {
 ## Roadmap
   - Optionally parse `php.ini` for configuration
   - Allow for other session handlers, such as memcached
-  - Implement many more tests
+  - More tests
 
 ## Change Log
 
