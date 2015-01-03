@@ -1,0 +1,22 @@
+{
+  "name": "php-session-middleware",
+  "version": "0.0.0",
+  "description": "Express/Connect Middleware to load PHP session data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "php",
+    "express",
+    "connect",
+    "middleware",
+    "session"
+  ],
+  "author": "Chris Morrell <http://cmorrell.com>",
+  "license": "MIT",
+  "dependencies": {
+    "php-unserialize": "0.0.1",
+    "bluebird": "^2.5.3"
+  }
+}
