@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = require('./lib/middleware.js');
+module.exports = require(__dirname + '/lib/middleware.js');
 module.exports.handlers = {
-	file: require('./lib/handlers/file.js')
+	file: require(__dirname + '/lib/handlers/file.js')
 };
